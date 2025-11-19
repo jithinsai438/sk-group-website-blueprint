@@ -1,2 +1,14 @@
 [build]
-command = "npm install --legacy-peer-deps && npm run build"
+  # 1. Set a modern Node.js version (Node 20 is a current LTS for best compatibility)
+  environment = { NODE_VERSION = "20" }
+  
+  # Your original build command
+  command = "npm install --legacy-peer-deps && npm run build"
+  
+  # Next.js projects should be published from the root directory
+  publish = "."
+
+# 2. This is the crucial part: it activates the official Netlify Next.js Runtime plugin.
+# This plugin automatically handles server-side features like API routes and SSR pages.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
