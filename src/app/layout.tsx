@@ -8,6 +8,11 @@ import { Toaster } from "@/components/ui/sonner";
 export const metadata: Metadata = {
   title: "SK Group of Connections - Five Divisions, One Vision",
   description: "Building India through Connection and Commitment. Construction, Legal, PR, Event Management, and Tissue Manufacturing services.",
+  // ADDED: This explicitly tells Next.js to use the new icon.svg file 
+  // located in your /public directory, fixing the build error.
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
